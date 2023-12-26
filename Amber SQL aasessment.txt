@@ -1,0 +1,29 @@
+1.select name , departmentid from employee 
+Where departmentid = “Unassigned”
+
+
+2.select departmentid , count(*) from employee
+Group by departmentid
+
+
+3. Select depatmentid , avg(salary) from employee as e inner join salary as s
+On e.employeeid = s.employeeid
+Group by departmentid 
+Having avg(salary) >5500
+
+
+4.Select name, hiredate from employee
+Where hiredate  > ‘2022-03–01’
+
+
+5.SELECT 
+    employee_id,
+    salary,
+    Hiredate,
+    AVG(salary) OVER () AS avg_salary,
+    AVG(salary) OVER () - salary AS salary_difference
+FROM 
+    employee as e 
+Inner join 
+Salary as s 
+On e.employeeid = s.employeeid
